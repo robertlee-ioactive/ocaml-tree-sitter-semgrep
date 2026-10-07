@@ -34,7 +34,7 @@ module.exports = grammar(base_grammar, {
 
     // Added for the bloody preprocessor stuff.
     preproc_conditional: _ =>
-      token(seq('#', choice('if', 'ifdef', 'ifndef', 'elif', 'else', 'endif'),
+      token(seq('#', /[ \t]*/, choice('if', 'ifdef', 'ifndef', 'elif', 'else', 'endif'),
                 /(\\+(.|\r?\n)|[^\\\n])*/)),
 
 

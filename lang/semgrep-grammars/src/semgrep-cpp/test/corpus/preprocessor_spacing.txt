@@ -1,0 +1,152 @@
+================================================================================
+Conditional branches with unspaced directives
+================================================================================
+#if __has_include(<uchar.h>)
+int first(void) { return 1; }
+#elif !defined(__cplusplus)
+int second(void) { return 2; }
+#else
+int third(void) { return 3; }
+#endif
+
+--------------------------------------------------------------------------------
+
+(translation_unit
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive))
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive)))
+
+================================================================================
+Conditional branches with spaces after the hash
+================================================================================
+# if __has_include(<uchar.h>)
+int first(void) { return 1; }
+# elif !defined(__cplusplus)
+int second(void) { return 2; }
+# else
+int third(void) { return 3; }
+# endif
+
+--------------------------------------------------------------------------------
+
+(translation_unit
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive))
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive)))
+
+================================================================================
+Conditional branches with tabs after the hash
+================================================================================
+#	if __has_include(<uchar.h>)
+int first(void) { return 1; }
+#	elif !defined(__cplusplus)
+int second(void) { return 2; }
+#	else
+int third(void) { return 3; }
+#	endif
+
+--------------------------------------------------------------------------------
+
+(translation_unit
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_conditional)
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive))
+  (function_definition
+    (primitive_type)
+    (function_declarator
+      (identifier)
+      (parameter_list
+        (parameter_declaration
+          (primitive_type))))
+    (compound_statement
+      (return_statement
+        (number_literal))))
+  (preproc_call
+    (preproc_directive)))
